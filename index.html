@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <script src ="​https://aframe.io/releases/0.6.0/aframe.min.js​"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script> 
+    <link href="./style.css" rel="stylesheet" />
+    <script src="./addButtons.js"> </script>
+
+</head>
+
+    <body style="margin : 0px; overflow: hidden;">
+
+        <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; 
+          sourceWidth:1280; sourceHeight:960; 
+          displayWidth: 1280; displayHeight: 960; 
+          debugUIEnabled: false;" gesture-detector create-buttons>
+      
+          <!-- Camera -->
+          <a-entity camera></a-entity>
+      
+          <a-assets>
+            <a-asset-item id="truck" src="./assets/scene.gltf"></a-asset-item>
+          </a-assets>
+      
+          <!--Pattern Marker-->
+          <a-marker id="truck-marker" type="pattern" url="assets/dish-markers/pattern-pizza.patt" cursor="rayOrigin: mouse" markerHandler>
+            
+            <a-entity id="truck" position="-1 0 0" scale="0.05 0.05 0.05" 
+              gltf-model="#truck-model"
+              gesture-handler>
+            </a-entity>
+
+
+
+
+</body>
+
+
+
+</html>
